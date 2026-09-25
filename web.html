@@ -3,318 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emmanuel Adjei</title>
+    <title>Emmanuel Adjei - Researcher Profile</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body {
-            margin: 0;
-            color: #222;
-            background: #f7f7f7;
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
         }
-
         .navbar {
+            background-color: #333;
+            color: white;
             padding: 10px 0;
-            background: #333;
         }
-
-        .navbar .nav-inner {
-            width: 100%;
-            max-width: 900px;
-            margin: auto;
-            padding: 0 20px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 22px;
-        }
-
         .navbar a {
-            color: #fff;
+            color: white;
+            margin: 0 15px;
             text-decoration: none;
         }
-
-        .navbar a:hover { text-decoration: underline; }
-
-        .page {
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        .container {
             max-width: 900px;
             margin: auto;
-            padding: 30px 40px 50px;
-            background: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .header {
-            margin-bottom: 35px;
-            text-align: center;
-        }
-
         .profile-img {
-            display: block;
-            width: 150px;
-            height: 150px;
-            margin: 0 auto 18px;
+            max-width: 150px;
             border-radius: 50%;
-            object-fit: cover;
-            object-position: 65% center;
+            display: block;
+            margin: 20px auto;
         }
-
-        h1 {
-            margin-bottom: 6px;
-            font-size: 2.1rem;
-        }
-
-        .position {
-            margin-bottom: 12px;
-            font-size: 1.05rem;
-        }
-
-        .contact-info {
-            margin-bottom: 8px;
-            font-size: 0.95rem;
-        }
-
-        .contact-info a,
-        .profile-links a { margin: 0 5px; }
-
-        .contact-info i { margin-right: 3px; }
-
-        .profile-links { margin-top: 10px; }
-
-        section { margin-top: 38px; }
-
-        h2 {
-            margin-bottom: 18px;
-            padding-bottom: 6px;
-            border-bottom: 1px solid #ccc;
-            color: #222;
-            font-size: 1.45rem;
-        }
-
-        h3 {
-            margin-bottom: 4px;
-            font-size: 1.05rem;
-        }
-
-        p { margin-bottom: 12px; }
-
-        ul { padding-left: 22px; }
-
-        li { margin-bottom: 10px; }
-
-        .entry { margin-bottom: 22px; }
-
-        .entry:last-child { margin-bottom: 0; }
-
-        .entry-heading {
-            display: flex;
-            justify-content: space-between;
-            gap: 20px;
-        }
-
-        .entry-heading span {
-            color: #555;
-            white-space: nowrap;
-        }
-
-        .entry p { margin: 4px 0; }
-
-        .paper-title { font-weight: bold; }
-
-        footer {
-            margin-top: 45px;
-            padding-top: 18px;
-            border-top: 1px solid #ddd;
-            color: #666;
-            font-size: 0.85rem;
+        .header {
             text-align: center;
+            margin-bottom: 20px;
         }
-
-        @media (max-width: 600px) {
-            .page { padding: 25px 20px 40px; }
-            .navbar .nav-inner { gap: 12px 18px; }
-            .entry-heading { display: block; }
-            .entry-heading span { display: block; margin-top: 2px; white-space: normal; }
+        .header h1 {
+            margin-bottom: 5px;
+            font-size: 2em;
+        }
+        .header p {
+            margin: 5px 0;
+            font-size: 1.1em;
+        }
+        .header a {
+            display: inline-block;
+            color: #007bff;
+            text-decoration: none;
+            margin: 5px;
+        }
+        .header a:hover {
+            text-decoration: underline;
+        }
+        .contact-info i {
+            margin-right: 5px;
+        }
+        .content {
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+        .content p {
+            margin-bottom: 15px;
         }
     </style>
 </head>
 <body>
 
-<nav class="navbar" aria-label="Main navigation">
-    <div class="nav-inner">
-        <a href="#home">Home</a>
-        <a href="#research">Research</a>
-        <a href="#publications">Publications</a>
-        <a href="#education">Education</a>
-        <a href="#teaching">Teaching</a>
-        <a href="#projects">Projects</a>
+<div class="navbar">
+    <div class="container">
+        <a href="#">Home</a>
+        <a href="#">Research</a>
+        <a href="#">Teaching</a>
+        <a href="#">Non-econ Miscellanea</a>
     </div>
-</nav>
+</div>
 
-<main class="page" id="home">
-    <header class="header">
+<div class="container">
+    <div class="header">
         <img src="adjei.jpg" alt="Emmanuel Adjei" class="profile-img">
         <h1>Emmanuel Adjei</h1>
-        <p class="position">
-            PhD Student in Civil and Environmental Engineering<br>
-            University of California, Irvine
-        </p>
+        <p>Postdoctoral Scholar<br>Institute for Fiscal Studies<br>London, United Kingdom</p>
         <p class="contact-info">
-            <i class="fa fa-envelope"></i><a href="mailto:eadjei@uci.edu">eadjei@uci.edu</a> |
-            <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/emmanuel-adjei-hero/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
-            <i class="fa fa-github"></i><a href="https://github.com/Adjeihero" target="_blank" rel="noopener noreferrer">GitHub</a> |
-            <i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/@emmanueladjei6389" target="_blank" rel="noopener noreferrer">YouTube</a>
+            <i class="fa fa-mobile"></i> <i class="fa fa-whatsapp"></i> <a href="tel:+19499924661">+1(949)-992-4661</a> |
+            <i class="fa fa-at"></i> <a href="mailto:eadjei@uci.edu" style="color:blue;">eadjei@uci.edu/eadjei@aims.edu.gh</a> |
+            <i class="fa fa-linkedin-square"></i> <a href="https://www.linkedin.com/in/emmanuel-adjei-hero/" style="color:blue;">LinkedIn</a> |
+            <i class="fa fa-github"></i> <a href="https://github.com/Adjeihero" style="color:blue;">GitHub</a>
         </p>
-        <p class="profile-links">
-            <a href="https://github.com/Adjeihero/CV/blob/main/CV_Emmanuel_Adjei.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
-        </p>
-    </header>
+        <a href="#">CV</a>
+        <a href="#">Google Scholar</a>
+        <a href="#">Twitter</a>
+    </div>
 
-    <section id="about">
-        <h2>About</h2>
-        <p>I am a PhD student in Civil and Environmental Engineering at the University of California, Irvine. My research focuses on mathematical modeling, transportation systems, dynamical systems, and data analysis.</p>
-        <p>I am a graduate researcher in the UCI Robot Ecology Lab and an affiliated doctoral student at the Institute of Transportation Studies. My current work studies traffic assignment, route-choice behavior, and network dynamics.</p>
-    </section>
-
-    <section id="publications">
-        <h2>Publications and Manuscripts</h2>
-        <ol>
-            <li>
-                E. Adjei, B. A. Butler, W. Jin, and M. Egerstedt,
-                <a class="paper-title" href="https://ieeexplore.ieee.org/document/11615850" target="_blank" rel="noopener noreferrer">“Nonlinear Consensus for Traffic Assignment in Multi-Route Networks.”</a>
-                Proceedings of the 2026 American Control Conference, pp. 4150–4156.
-            </li>
-            <li>
-                E. Adjei, B. A. Butler, V. Pradhan, W. Jin, and M. Egerstedt,
-                <span class="paper-title">“Convergence Rates of Replicator Dynamics in Traffic Assignment Problems.”</span>
-                Manuscript.
-            </li>
-        </ol>
-    </section>
-
-    <section id="research">
-        <h2>Research Experience</h2>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>UCI Robot Ecology Lab</h3>
-                <span>Irvine, CA</span>
-            </div>
-            <p><strong>Graduate Researcher</strong></p>
-            <p>Research in transportation systems, multi-agent systems, mathematical modeling, simulation, route-choice behavior, traffic assignment, and network dynamics.</p>
-            <p><a href="https://faculty.sites.uci.edu/robotecology/lab-members/" target="_blank" rel="noopener noreferrer">Lab website</a></p>
-        </div>
-
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>Institute of Transportation Studies, UC Irvine</h3>
-                <span>Irvine, CA</span>
-            </div>
-            <p><strong>Graduate Student Researcher</strong></p>
-            <p>Research in transportation systems, traffic assignment, control, and network dynamics.</p>
-            <p><a href="https://its.uci.edu/students/" target="_blank" rel="noopener noreferrer">ITS website</a></p>
-        </div>
-
-        <div class="entry">
-            <h3>Regression Method Estimation of the Extreme Value Index Using Random Weights</h3>
-            <p>Research on a reduced-bias estimator of the extreme value index for Pareto-type distributions.</p>
-            <p><a href="https://github.com/Adjeihero/Graduate-research" target="_blank" rel="noopener noreferrer">Project repository</a></p>
-        </div>
-
-        <div class="entry">
-            <h3>Macroeconomic Variables and Lending Interest Rates</h3>
-            <p>A multiple linear regression study of the relationship between macroeconomic variables and lending interest rates.</p>
-            <p><a href="https://github.com/Adjeihero/Undergraduate-Research" target="_blank" rel="noopener noreferrer">Project repository</a></p>
-        </div>
-    </section>
-
-    <section id="education">
-        <h2>Education</h2>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>University of California, Irvine</h3>
-                <span>2025–Present</span>
-            </div>
-            <p>PhD in Civil and Environmental Engineering</p>
-        </div>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>University of California, Irvine</h3>
-                <span>2025</span>
-            </div>
-            <p>Master of Science in Statistics</p>
-        </div>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>African Institute for Mathematical Sciences / University of Ghana</h3>
-                <span>2022</span>
-            </div>
-            <p>Master of Science in Mathematical Sciences</p>
-        </div>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>Kwame Nkrumah University of Science and Technology</h3>
-                <span>2020</span>
-            </div>
-            <p>Bachelor of Science in Statistics, First Class</p>
-        </div>
-    </section>
-
-    <section id="teaching">
-        <h2>Teaching Experience</h2>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>University of California, Irvine</h3>
-                <span>September 2022–August 2024</span>
-            </div>
-            <p><strong>Teaching Assistant and Reader, Department of Statistics</strong></p>
-            <p>Supported courses in basic statistics, probability, statistical inference, and data analysis.</p>
-        </div>
-        <div class="entry">
-            <div class="entry-heading">
-                <h3>Kwame Nkrumah University of Science and Technology</h3>
-                <span>August 2020–September 2022</span>
-            </div>
-            <p><strong>Research and Teaching Assistant, Department of Mathematics</strong></p>
-            <p>Tutored differential equations, calculus, numerical methods, real analysis, partial differential equations, and linear algebra.</p>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2>Selected Projects</h2>
-        <div class="entry">
-            <h3>Passco — WASSCE Exam Prep App</h3>
-            <p>A Flutter and Firebase mobile application for West African examination questions, LaTeX mathematics, and worked solutions.</p>
-        </div>
-        <div class="entry">
-            <h3>Mathematics Lessons on YouTube</h3>
-            <p>Lessons on partial differential equations and topics from the WAEC mathematics syllabus.</p>
-            <p><a href="https://www.youtube.com/@emmanueladjei6389" target="_blank" rel="noopener noreferrer">YouTube channel</a></p>
-        </div>
-    </section>
-
-    <section id="awards">
-        <h2>Awards and Service</h2>
-        <ul>
-            <li>U.S. Department of Education GAANN Fellowship</li>
-            <li>Department of Statistics, UC Irvine Assistantship Award</li>
-            <li>AIMS General Bursary</li>
-            <li>Reviewer, 2026 American Control Conference</li>
-            <li>Student Volunteer, 46th Southern California Control Workshop</li>
-        </ul>
-    </section>
-
-    <section id="skills">
-        <h2>Computing Skills</h2>
-        <p><strong>Programming:</strong> Python, MATLAB, Mathematica, R, and SQL</p>
-        <p><strong>Libraries:</strong> NumPy, SciPy, scikit-learn, and PyTorch</p>
-        <p><strong>Technologies:</strong> Unix shell, LaTeX, Tableau, Power BI, Flutter, and Firebase</p>
-    </section>
-
-    <footer>
-        <p>Emmanuel Adjei · University of California, Irvine</p>
-    </footer>
-</main>
+    <div class="content">
+        <p>Hi, I'm Emmanuel! I'm a Postdoctoral Scholar at the Institute for Fiscal Studies working on issues in public and labor economics.</p>
+        <p>My research mainly deals with tax avoidance/evasion and inequality, but my interests also extend more broadly to applying microeconomic and econometric methods to learning about social issues.</p>
+        <p>Prior to moving to London, I completed my PhD in the beautiful Berkeley, California. Before then, I lived in Manhattan and Reims, France, where I finished my undergraduate degrees.</p>
+    </div>
+</div>
 
 </body>
 </html>
