@@ -1,872 +1,320 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Emmanuel Adjei is a PhD researcher at UC Irvine working on mathematical modeling, transportation systems, nonlinear dynamics, control, and applied statistics.">
-  <meta name="theme-color" content="#0b1f3a">
-  <meta property="og:title" content="Emmanuel Adjei | Researcher & Engineer">
-  <meta property="og:description" content="Research in transportation systems, nonlinear dynamics, control, and applied statistics.">
-  <meta property="og:type" content="website">
-  <meta property="og:image" content="adjei.jpg">
-  <title>Emmanuel Adjei | Researcher &amp; Engineer</title>
-
-  <style>
-    :root {
-      --navy: #0b1f3a;
-      --navy-soft: #18375f;
-      --blue: #1467a8;
-      --sky: #e8f3fb;
-      --gold: #e6a817;
-      --ink: #172033;
-      --muted: #5e6878;
-      --line: #dce3eb;
-      --paper: #ffffff;
-      --wash: #f4f7fa;
-      --radius: 18px;
-      --shadow: 0 18px 50px rgba(11, 31, 58, 0.10);
-      --max: 1120px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 88px;
-    }
-
-    body {
-      margin: 0;
-      color: var(--ink);
-      background: var(--wash);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.65;
-    }
-
-    a { color: var(--blue); }
-
-    a:hover { color: var(--navy); }
-
-    img { max-width: 100%; }
-
-    .skip-link {
-      position: fixed;
-      top: 10px;
-      left: 10px;
-      z-index: 1000;
-      padding: 10px 14px;
-      color: #fff;
-      background: var(--navy);
-      border-radius: 8px;
-      transform: translateY(-160%);
-    }
-
-    .skip-link:focus { transform: translateY(0); }
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      border-bottom: 1px solid rgba(220, 227, 235, 0.9);
-      background: rgba(255, 255, 255, 0.94);
-      backdrop-filter: blur(14px);
-    }
-
-    .nav-wrap {
-      width: min(calc(100% - 40px), var(--max));
-      min-height: 72px;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 28px;
-    }
-
-    .brand {
-      color: var(--navy);
-      font-size: 1.05rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      text-decoration: none;
-      white-space: nowrap;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .nav-links a {
-      display: inline-block;
-      padding: 9px 11px;
-      border-radius: 8px;
-      color: #354258;
-      font-size: 0.92rem;
-      font-weight: 650;
-      text-decoration: none;
-    }
-
-    .nav-links a:hover,
-    .nav-links a:focus-visible {
-      color: var(--navy);
-      background: var(--sky);
-    }
-
-    main { overflow: hidden; }
-
-    .hero {
-      position: relative;
-      color: #fff;
-      background:
-        radial-gradient(circle at 85% 15%, rgba(45, 140, 200, 0.35), transparent 28%),
-        radial-gradient(circle at 0 100%, rgba(230, 168, 23, 0.15), transparent 30%),
-        linear-gradient(135deg, #08182d 0%, #0b2a4c 62%, #104a73 100%);
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      opacity: 0.20;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px);
-      background-size: 42px 42px;
-      mask-image: linear-gradient(to bottom, #000, transparent 82%);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: min(calc(100% - 40px), var(--max));
-      min-height: 620px;
-      margin: 0 auto;
-      padding: 78px 0 70px;
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 340px;
-      align-items: center;
-      gap: 72px;
-    }
-
-    .eyebrow {
-      margin: 0 0 16px;
-      color: #8fd1fa;
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-    }
-
-    h1, h2, h3, p { margin-top: 0; }
-
-    h1 {
-      max-width: 760px;
-      margin-bottom: 20px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(3.2rem, 8vw, 6.8rem);
-      line-height: 0.94;
-      letter-spacing: -0.055em;
-    }
-
-    .hero-title {
-      max-width: 740px;
-      margin-bottom: 18px;
-      color: #dbeefa;
-      font-size: clamp(1.2rem, 2.5vw, 1.55rem);
-      font-weight: 700;
-    }
-
-    .hero-copy {
-      max-width: 720px;
-      margin-bottom: 30px;
-      color: #c2d1df;
-      font-size: 1.06rem;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 46px;
-      padding: 0 18px;
-      border: 1px solid transparent;
-      border-radius: 999px;
-      font-weight: 800;
-      text-decoration: none;
-      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-
-    .button-primary {
-      color: var(--navy);
-      background: #fff;
-    }
-
-    .button-primary:hover { color: var(--navy); background: #eaf5fc; }
-
-    .button-secondary {
-      color: #fff;
-      border-color: rgba(255,255,255,.38);
-      background: rgba(255,255,255,.06);
-    }
-
-    .button-secondary:hover { color: #fff; border-color: #fff; background: rgba(255,255,255,.12); }
-
-    .portrait-wrap {
-      position: relative;
-      justify-self: center;
-    }
-
-    .portrait-wrap::before {
-      content: "";
-      position: absolute;
-      width: 92%;
-      aspect-ratio: 1;
-      left: -24px;
-      bottom: -25px;
-      border: 2px solid rgba(230, 168, 23, 0.82);
-      border-radius: 42% 58% 54% 46%;
-    }
-
-    .portrait {
-      position: relative;
-      display: block;
-      width: 310px;
-      aspect-ratio: 4 / 5;
-      object-fit: cover;
-      object-position: 65% center;
-      border: 7px solid rgba(255,255,255,.15);
-      border-radius: 44% 44% 20px 20px;
-      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.38);
-    }
-
-    .portrait-label {
-      position: absolute;
-      right: -24px;
-      bottom: 28px;
-      z-index: 2;
-      padding: 12px 16px;
-      color: var(--navy);
-      background: #fff;
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      font-size: 0.82rem;
-      font-weight: 800;
-    }
-
-    .section {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 0 auto;
-      padding: 90px 0;
-    }
-
-    .section-compact { padding-top: 0; }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: minmax(200px, .38fr) 1fr;
-      gap: 50px;
-      align-items: start;
-      margin-bottom: 42px;
-    }
-
-    .section-heading h2 {
-      margin: 0;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.25rem, 5vw, 3.5rem);
-      line-height: 1.05;
-      letter-spacing: -0.035em;
-    }
-
-    .section-intro {
-      max-width: 710px;
-      margin: 6px 0 0;
-      color: var(--muted);
-      font-size: 1.08rem;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 36px;
-      align-items: stretch;
-    }
-
-    .about-copy,
-    .focus-panel,
-    .card,
-    .timeline,
-    .publication-list {
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: 0 12px 36px rgba(11, 31, 58, 0.05);
-    }
-
-    .about-copy,
-    .focus-panel { padding: clamp(26px, 4vw, 40px); }
-
-    .about-copy p:last-child { margin-bottom: 0; }
-
-    .focus-panel {
-      color: #fff;
-      border: 0;
-      background: linear-gradient(145deg, var(--navy), var(--navy-soft));
-    }
-
-    .focus-panel h3 { margin-bottom: 20px; font-size: 1.22rem; }
-
-    .tag-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 9px;
-    }
-
-    .tag {
-      padding: 8px 12px;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 999px;
-      color: #e5f3fc;
-      background: rgba(255,255,255,.07);
-      font-size: .86rem;
-      font-weight: 700;
-    }
-
-    .band {
-      background: #eaf1f7;
-      border-block: 1px solid #d8e2eb;
-    }
-
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-    }
-
-    .card {
-      padding: 28px;
-      transition: transform 180ms ease, box-shadow 180ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .card-kicker {
-      margin-bottom: 10px;
-      color: var(--blue);
-      font-size: .76rem;
-      font-weight: 850;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
-
-    .card h3 {
-      margin-bottom: 10px;
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.34rem;
-      line-height: 1.25;
-    }
-
-    .card p { margin-bottom: 16px; color: var(--muted); }
-
-    .card a { font-weight: 800; text-underline-offset: 3px; }
-
-    .publication-list { overflow: hidden; }
-
-    .publication {
-      display: grid;
-      grid-template-columns: 74px 1fr auto;
-      gap: 22px;
-      align-items: start;
-      padding: 30px 32px;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .publication:last-child { border-bottom: 0; }
-
-    .pub-year {
-      color: var(--navy);
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 1.35rem;
-      font-weight: 700;
-    }
-
-    .publication h3 {
-      margin-bottom: 8px;
-      color: var(--navy);
-      font-size: 1.12rem;
-      line-height: 1.42;
-    }
-
-    .publication h3 a {
-      color: inherit;
-      text-decoration-thickness: 1px;
-      text-decoration-color: rgba(20, 103, 168, 0.42);
-      text-underline-offset: 4px;
-    }
-
-    .publication h3 a:hover { color: var(--blue); }
-
-    .publication p { margin: 0; color: var(--muted); }
-
-    .status {
-      padding: 6px 10px;
-      border-radius: 999px;
-      color: #0a5f3f;
-      background: #def5ea;
-      font-size: .76rem;
-      font-weight: 850;
-      white-space: nowrap;
-    }
-
-    .status-submitted { color: #77510c; background: #fff1c7; }
-
-    .timeline { padding: 12px 32px; }
-
-    .timeline-item {
-      position: relative;
-      display: grid;
-      grid-template-columns: 190px 1fr;
-      gap: 30px;
-      padding: 28px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .timeline-item:last-child { border-bottom: 0; }
-
-    .timeline-date {
-      color: var(--blue);
-      font-size: .88rem;
-      font-weight: 850;
-    }
-
-    .timeline-item h3 { margin-bottom: 5px; color: var(--navy); font-size: 1.12rem; }
-
-    .timeline-item p { margin-bottom: 0; color: var(--muted); }
-
-    .split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 24px;
-    }
-
-    .plain-list {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    .plain-list li + li { margin-top: 10px; }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-    }
-
-    .skill-group {
-      padding: 26px;
-      border-left: 4px solid var(--gold);
-      background: var(--paper);
-      border-radius: 0 14px 14px 0;
-      box-shadow: 0 10px 30px rgba(11,31,58,.05);
-    }
-
-    .skill-group h3 { margin-bottom: 10px; color: var(--navy); font-size: 1rem; }
-
-    .skill-group p { margin: 0; color: var(--muted); }
-
-    .contact {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 0 auto 70px;
-      padding: clamp(34px, 7vw, 70px);
-      color: #fff;
-      background: linear-gradient(135deg, var(--navy), #124c75);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 36px;
-      align-items: center;
-    }
-
-    .contact h2 {
-      margin-bottom: 12px;
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(2.2rem, 5vw, 3.6rem);
-      line-height: 1;
-    }
-
-    .contact p { max-width: 650px; margin: 0; color: #c9dae7; }
-
-    .contact-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
-
-    .contact-links a {
-      padding: 10px 14px;
-      color: #fff;
-      border: 1px solid rgba(255,255,255,.32);
-      border-radius: 999px;
-      font-weight: 750;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover { background: rgba(255,255,255,.10); border-color: #fff; }
-
-    footer {
-      width: min(calc(100% - 40px), var(--max));
-      margin: 0 auto;
-      padding: 0 0 32px;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      color: var(--muted);
-      font-size: .86rem;
-    }
-
-    footer p { margin: 0; }
-
-    @media (max-width: 900px) {
-      .nav-wrap { align-items: flex-start; flex-direction: column; gap: 8px; padding: 15px 0 12px; }
-      .nav-links { width: 100%; overflow-x: auto; padding-bottom: 2px; }
-      .hero-inner { grid-template-columns: 1fr; min-height: auto; padding-top: 64px; gap: 54px; }
-      .portrait { width: 245px; }
-      .section-heading, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 24px; }
-      .skills-grid { grid-template-columns: 1fr 1fr; }
-      .contact-links { justify-content: flex-start; }
-    }
-
-    @media (max-width: 640px) {
-      .nav-wrap, .section, .hero-inner, footer { width: min(calc(100% - 28px), var(--max)); }
-      .hero-inner { padding: 50px 0 58px; }
-      h1 { font-size: clamp(3rem, 17vw, 4.6rem); }
-      .portrait { width: 210px; }
-      .portrait-label { right: -10px; bottom: 18px; }
-      .section { padding: 68px 0; }
-      .section-compact { padding-top: 0; }
-      .cards, .split, .skills-grid { grid-template-columns: 1fr; }
-      .publication { grid-template-columns: 1fr; gap: 8px; padding: 25px 22px; }
-      .status { justify-self: start; }
-      .timeline { padding: 8px 22px; }
-      .timeline-item { grid-template-columns: 1fr; gap: 7px; }
-      .contact { width: calc(100% - 28px); margin-bottom: 48px; border-radius: 20px; }
-      footer { flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition: none !important; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmanuel Adjei</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            color: #222;
+            background: #f7f7f7;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            padding: 10px 0;
+            background: #333;
+        }
+
+        .navbar .nav-inner {
+            width: 100%;
+            max-width: 900px;
+            margin: auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .navbar a:hover { text-decoration: underline; }
+
+        .page {
+            max-width: 900px;
+            margin: auto;
+            padding: 30px 40px 50px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .header {
+            margin-bottom: 35px;
+            text-align: center;
+        }
+
+        .profile-img {
+            display: block;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 18px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 65% center;
+        }
+
+        h1 {
+            margin-bottom: 6px;
+            font-size: 2.1rem;
+        }
+
+        .position {
+            margin-bottom: 12px;
+            font-size: 1.05rem;
+        }
+
+        .contact-info {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .contact-info a,
+        .profile-links a { margin: 0 5px; }
+
+        .contact-info i { margin-right: 3px; }
+
+        .profile-links { margin-top: 10px; }
+
+        section { margin-top: 38px; }
+
+        h2 {
+            margin-bottom: 18px;
+            padding-bottom: 6px;
+            border-bottom: 1px solid #ccc;
+            color: #222;
+            font-size: 1.45rem;
+        }
+
+        h3 {
+            margin-bottom: 4px;
+            font-size: 1.05rem;
+        }
+
+        p { margin-bottom: 12px; }
+
+        ul { padding-left: 22px; }
+
+        li { margin-bottom: 10px; }
+
+        .entry { margin-bottom: 22px; }
+
+        .entry:last-child { margin-bottom: 0; }
+
+        .entry-heading {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .entry-heading span {
+            color: #555;
+            white-space: nowrap;
+        }
+
+        .entry p { margin: 4px 0; }
+
+        .paper-title { font-weight: bold; }
+
+        footer {
+            margin-top: 45px;
+            padding-top: 18px;
+            border-top: 1px solid #ddd;
+            color: #666;
+            font-size: 0.85rem;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .page { padding: 25px 20px 40px; }
+            .navbar .nav-inner { gap: 12px 18px; }
+            .entry-heading { display: block; }
+            .entry-heading span { display: block; margin-top: 2px; white-space: normal; }
+        }
+    </style>
 </head>
-
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
 
-  <header class="site-header">
-    <nav class="nav-wrap" aria-label="Primary navigation">
-      <a class="brand" href="#top">Emmanuel Adjei</a>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#publications">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" id="top">
-      <div class="hero-inner">
-        <div>
-          <p class="eyebrow">Researcher · Engineer · Educator</p>
-          <h1>Emmanuel Adjei</h1>
-          <p class="hero-title">PhD researcher in Civil &amp; Environmental Engineering at UC Irvine</p>
-          <p class="hero-copy">I study transportation networks through mathematical modeling, nonlinear dynamics, control, and data analysis—connecting rigorous theory to mobility systems that work better for people.</p>
-          <div class="actions" aria-label="Featured links">
-            <a class="button button-primary" href="#research">Explore my research</a>
-            <a class="button button-secondary" href="https://github.com/Adjeihero/CV/blob/main/CV_Emmanuel_Adjei.pdf" target="_blank" rel="noopener noreferrer">View CV</a>
-            <a class="button button-secondary" href="mailto:eadjei@uci.edu">Email me</a>
-          </div>
-        </div>
-
-        <div class="portrait-wrap">
-          <img class="portrait" src="adjei.jpg" alt="Portrait of Emmanuel Adjei" width="620" height="775">
-          <div class="portrait-label">UC Irvine · Irvine, CA</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="about">
-      <div class="section-heading">
-        <p class="eyebrow">About</p>
-        <h2>Mathematics for complex, connected systems.</h2>
-      </div>
-
-      <div class="about-grid">
-        <div class="about-copy">
-          <p>I am a doctoral researcher at the University of California, Irvine, working at the intersection of transportation systems, dynamical systems, and applied mathematics. My current work develops and analyzes models of how travelers collectively choose routes—and how those choices shape congestion and network performance.</p>
-          <p>My training spans civil engineering, statistics, and mathematical sciences. I am particularly interested in translating ideas from nonlinear dynamics, consensus, optimization, and data analysis into tools for understanding real transportation networks.</p>
-          <p>I also enjoy teaching mathematics and statistics. Across university and secondary-school classrooms, I have supported learners in probability, statistical methods, calculus, differential equations, numerical methods, linear algebra, and real analysis.</p>
-        </div>
-
-        <aside class="focus-panel" aria-label="Research interests">
-          <h3>Research interests</h3>
-          <div class="tag-list">
-            <span class="tag">Transportation networks</span>
-            <span class="tag">Traffic assignment</span>
-            <span class="tag">Nonlinear dynamics</span>
-            <span class="tag">Consensus &amp; control</span>
-            <span class="tag">Mathematical modeling</span>
-            <span class="tag">Applied statistics</span>
-            <span class="tag">Data analysis</span>
-            <span class="tag">Stochastic processes</span>
-          </div>
-        </aside>
-      </div>
-    </section>
-
-    <div class="band">
-      <section class="section" id="research">
-        <div class="section-heading">
-          <p class="eyebrow">Research</p>
-          <div>
-            <h2>Current affiliations &amp; selected work</h2>
-            <p class="section-intro">My work combines theoretical analysis with computational methods to study collective behavior and decision-making in transportation and other networked systems.</p>
-          </div>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <p class="card-kicker">Current research</p>
-            <h3>UCI Robot Ecology Lab</h3>
-            <p>Graduate researcher working on networked systems and collective dynamics under the supervision of Professor Magnus Egerstedt.</p>
-            <a href="https://faculty.sites.uci.edu/robotecology/lab-members/" target="_blank" rel="noopener noreferrer">Visit the lab →</a>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Doctoral affiliation</p>
-            <h3>Institute of Transportation Studies</h3>
-            <p>Affiliated doctoral student contributing to research in transportation systems, control, and traffic assignment.</p>
-            <a href="https://its.uci.edu/students/" target="_blank" rel="noopener noreferrer">Visit ITS Irvine →</a>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Graduate research</p>
-            <h3>Extreme-value estimation</h3>
-            <p>Developed a reduced-bias estimator of the extreme value index for Pareto-type distributions using random and approximate deterministic weight functions.</p>
-            <a href="https://github.com/Adjeihero/Graduate-research" target="_blank" rel="noopener noreferrer">View research repository →</a>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Undergraduate research</p>
-            <h3>Macroeconomic drivers of interest rates</h3>
-            <p>Applied multiple linear regression to examine how exchange rates and other macroeconomic variables relate to lending interest rates.</p>
-            <a href="https://github.com/Adjeihero/Undergraduate-Research" target="_blank" rel="noopener noreferrer">View research repository →</a>
-          </article>
-        </div>
-      </section>
+<nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+        <a href="#home">Home</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#education">Education</a>
+        <a href="#teaching">Teaching</a>
+        <a href="#projects">Projects</a>
     </div>
+</nav>
 
-    <section class="section" id="publications">
-      <div class="section-heading">
-        <p class="eyebrow">Publications</p>
-        <div>
-          <h2>Publications &amp; manuscripts</h2>
-          <p class="section-intro">Recent work on nonlinear consensus and convergence in traffic-assignment dynamics.</p>
-        </div>
-      </div>
+<main class="page" id="home">
+    <header class="header">
+        <img src="adjei.jpg" alt="Emmanuel Adjei" class="profile-img">
+        <h1>Emmanuel Adjei</h1>
+        <p class="position">
+            PhD Student in Civil and Environmental Engineering<br>
+            University of California, Irvine
+        </p>
+        <p class="contact-info">
+            <i class="fa fa-envelope"></i><a href="mailto:eadjei@uci.edu">eadjei@uci.edu</a> |
+            <i class="fa fa-linkedin-square"></i><a href="https://www.linkedin.com/in/emmanuel-adjei-hero/" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+            <i class="fa fa-github"></i><a href="https://github.com/Adjeihero" target="_blank" rel="noopener noreferrer">GitHub</a> |
+            <i class="fa fa-youtube-play"></i><a href="https://www.youtube.com/@emmanueladjei6389" target="_blank" rel="noopener noreferrer">YouTube</a>
+        </p>
+        <p class="profile-links">
+            <a href="https://github.com/Adjeihero/CV/blob/main/CV_Emmanuel_Adjei.pdf" target="_blank" rel="noopener noreferrer">Curriculum Vitae</a>
+        </p>
+    </header>
 
-      <div class="publication-list">
-        <article class="publication">
-          <div class="pub-year">2026</div>
-          <div>
-            <h3><a href="https://ieeexplore.ieee.org/document/11615850" target="_blank" rel="noopener noreferrer">Nonlinear Consensus for Traffic Assignment in Multi-Route Networks</a></h3>
-            <p>Emmanuel Adjei, Brooks A. Butler, Wenlong Jin, and Magnus Egerstedt · Proceedings of the 2026 American Control Conference (ACC), pp. 4150–4156</p>
-          </div>
-          <span class="status">Published</span>
-        </article>
-
-        <article class="publication">
-          <div class="pub-year">2026</div>
-          <div>
-            <h3>Convergence Rates of Replicator Dynamics in Traffic Assignment Problems</h3>
-            <p>Emmanuel Adjei, B. A. Butler, V. Pradhan, W. Jin, and M. Egerstedt · IEEE Conference on Decision and Control (CDC)</p>
-          </div>
-          <span class="status status-submitted">Submitted</span>
-        </article>
-      </div>
+    <section id="about">
+        <h2>About</h2>
+        <p>I am a PhD student in Civil and Environmental Engineering at the University of California, Irvine. My research focuses on mathematical modeling, transportation systems, dynamical systems, and data analysis.</p>
+        <p>I am a graduate researcher in the UCI Robot Ecology Lab and an affiliated doctoral student at the Institute of Transportation Studies. My current work studies traffic assignment, route-choice behavior, and network dynamics.</p>
     </section>
 
-    <div class="band">
-      <section class="section" id="projects">
-        <div class="section-heading">
-          <p class="eyebrow">Projects</p>
-          <div>
-            <h2>Building tools for learning</h2>
-            <p class="section-intro">Beyond research, I develop educational software and clear, visual mathematics lessons for students.</p>
-          </div>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <p class="card-kicker">Flutter · Firebase · Paystack</p>
-            <h3>Passco — WASSCE Exam Prep</h3>
-            <p>A cross-platform mobile app that digitizes West African examination questions, renders mathematical notation with LaTeX, and provides detailed solution reasoning for students in Ghana.</p>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Mathematics education</p>
-            <h3>Partial Differential Equations</h3>
-            <p>Step-by-step undergraduate lessons on classifying and solving transport, heat, and wave equations.</p>
-            <a href="https://youtu.be/njeInpVbcGo?si=ChmNBbaZyjEFPzY9" target="_blank" rel="noopener noreferrer">Watch a lesson →</a>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">YouTube animation</p>
-            <h3>WAEC Mathematics</h3>
-            <p>Structured, student-friendly videos aligned with the WAEC syllabus, covering logarithms, surds, algebra, and worked examination questions.</p>
-            <a href="https://www.youtube.com/@emmanueladjei6389" target="_blank" rel="noopener noreferrer">Visit the channel →</a>
-          </article>
-
-          <article class="card">
-            <p class="card-kicker">Open portfolio</p>
-            <h3>Code &amp; research projects</h3>
-            <p>Repositories spanning transportation, mathematical modeling, statistics, scientific computing, and educational work.</p>
-            <a href="https://github.com/Adjeihero" target="_blank" rel="noopener noreferrer">Explore GitHub →</a>
-          </article>
-        </div>
-      </section>
-    </div>
-
-    <section class="section" id="education">
-      <div class="section-heading">
-        <p class="eyebrow">Education</p>
-        <h2>Interdisciplinary training</h2>
-      </div>
-
-      <div class="timeline">
-        <article class="timeline-item">
-          <div class="timeline-date">2025–Present</div>
-          <div>
-            <h3>PhD, Civil &amp; Environmental Engineering</h3>
-            <p>University of California, Irvine · Mathematical modeling, transportation systems, dynamical systems, and data analysis</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-date">2025</div>
-          <div>
-            <h3>MS, Statistics</h3>
-            <p>University of California, Irvine · Machine learning, causal inference, stochastic processes, Bayesian statistics, and statistical computing</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-date">2022</div>
-          <div>
-            <h3>MS, Mathematical Sciences</h3>
-            <p>African Institute for Mathematical Sciences / University of Ghana · Differential equations, dynamical systems, numerical analysis, scientific computing, and complex networks</p>
-          </div>
-        </article>
-        <article class="timeline-item">
-          <div class="timeline-date">2020</div>
-          <div>
-            <h3>BS, Statistics — First Class</h3>
-            <p>Kwame Nkrumah University of Science and Technology · Probability, statistics, analysis, differential equations, and numerical methods</p>
-          </div>
-        </article>
-      </div>
+    <section id="publications">
+        <h2>Publications and Manuscripts</h2>
+        <ol>
+            <li>
+                E. Adjei, B. A. Butler, W. Jin, and M. Egerstedt,
+                <a class="paper-title" href="https://ieeexplore.ieee.org/document/11615850" target="_blank" rel="noopener noreferrer">“Nonlinear Consensus for Traffic Assignment in Multi-Route Networks.”</a>
+                Proceedings of the 2026 American Control Conference, pp. 4150–4156.
+            </li>
+            <li>
+                E. Adjei, B. A. Butler, V. Pradhan, W. Jin, and M. Egerstedt,
+                <span class="paper-title">“Convergence Rates of Replicator Dynamics in Traffic Assignment Problems.”</span>
+                Manuscript.
+            </li>
+        </ol>
     </section>
 
-    <section class="section section-compact" id="teaching">
-      <div class="split">
-        <article class="card">
-          <p class="card-kicker">Teaching experience</p>
-          <h3>Supporting mathematical growth</h3>
-          <ul class="plain-list">
-            <li><strong>UC Irvine:</strong> Teaching Assistant and Reader in statistics and probability courses, including STAT 7, STATS 120A, and STATS 120B.</li>
-            <li><strong>KNUST:</strong> Research and Teaching Assistant in differential equations, calculus, numerical methods, real analysis, PDEs, and linear algebra.</li>
-            <li><strong>Church of Christ SHS:</strong> Mathematics tutor preparing students for WASSCE examinations.</li>
-          </ul>
-        </article>
+    <section id="research">
+        <h2>Research Experience</h2>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>UCI Robot Ecology Lab</h3>
+                <span>Irvine, CA</span>
+            </div>
+            <p><strong>Graduate Researcher</strong></p>
+            <p>Research in transportation systems, multi-agent systems, mathematical modeling, simulation, route-choice behavior, traffic assignment, and network dynamics.</p>
+            <p><a href="https://faculty.sites.uci.edu/robotecology/lab-members/" target="_blank" rel="noopener noreferrer">Lab website</a></p>
+        </div>
 
-        <article class="card">
-          <p class="card-kicker">Service &amp; recognition</p>
-          <h3>Awards and professional service</h3>
-          <ul class="plain-list">
-            <li>U.S. Department of Education GAANN Fellowship for research in consensus control and transportation networks.</li>
-            <li>Department of Statistics, UC Irvine Assistantship Award.</li>
-            <li>AIMS General Bursary for the MS in Mathematical Sciences.</li>
-            <li>Reviewer, 2026 American Control Conference.</li>
-            <li>Student Volunteer, 46th Southern California Control Workshop.</li>
-          </ul>
-        </article>
-      </div>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>Institute of Transportation Studies, UC Irvine</h3>
+                <span>Irvine, CA</span>
+            </div>
+            <p><strong>Graduate Student Researcher</strong></p>
+            <p>Research in transportation systems, traffic assignment, control, and network dynamics.</p>
+            <p><a href="https://its.uci.edu/students/" target="_blank" rel="noopener noreferrer">ITS website</a></p>
+        </div>
+
+        <div class="entry">
+            <h3>Regression Method Estimation of the Extreme Value Index Using Random Weights</h3>
+            <p>Research on a reduced-bias estimator of the extreme value index for Pareto-type distributions.</p>
+            <p><a href="https://github.com/Adjeihero/Graduate-research" target="_blank" rel="noopener noreferrer">Project repository</a></p>
+        </div>
+
+        <div class="entry">
+            <h3>Macroeconomic Variables and Lending Interest Rates</h3>
+            <p>A multiple linear regression study of the relationship between macroeconomic variables and lending interest rates.</p>
+            <p><a href="https://github.com/Adjeihero/Undergraduate-Research" target="_blank" rel="noopener noreferrer">Project repository</a></p>
+        </div>
     </section>
 
-    <div class="band">
-      <section class="section" id="skills">
-        <div class="section-heading">
-          <p class="eyebrow">Technical toolkit</p>
-          <h2>From theory to computation</h2>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>University of California, Irvine</h3>
+                <span>2025–Present</span>
+            </div>
+            <p>PhD in Civil and Environmental Engineering</p>
         </div>
-
-        <div class="skills-grid">
-          <div class="skill-group">
-            <h3>Programming</h3>
-            <p>Python · MATLAB · Mathematica · R · SQL</p>
-          </div>
-          <div class="skill-group">
-            <h3>Scientific computing</h3>
-            <p>NumPy · SciPy · scikit-learn · PyTorch</p>
-          </div>
-          <div class="skill-group">
-            <h3>Tools &amp; platforms</h3>
-            <p>LaTeX · Unix shell · Tableau · Power BI · Flutter · Firebase</p>
-          </div>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>University of California, Irvine</h3>
+                <span>2025</span>
+            </div>
+            <p>Master of Science in Statistics</p>
         </div>
-      </section>
-    </div>
-
-    <section class="contact" id="contact">
-      <div class="contact-grid">
-        <div>
-          <p class="eyebrow">Let’s connect</p>
-          <h2>Research, teaching, or collaboration.</h2>
-          <p>I welcome conversations about transportation systems, network dynamics, applied statistics, and mathematics education.</p>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>African Institute for Mathematical Sciences / University of Ghana</h3>
+                <span>2022</span>
+            </div>
+            <p>Master of Science in Mathematical Sciences</p>
         </div>
-        <div class="contact-links" aria-label="Contact and social links">
-          <a href="mailto:eadjei@uci.edu">Email</a>
-          <a href="https://www.linkedin.com/in/emmanuel-adjei-hero/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          <a href="https://github.com/Adjeihero" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.youtube.com/@emmanueladjei6389" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>Kwame Nkrumah University of Science and Technology</h3>
+                <span>2020</span>
+            </div>
+            <p>Bachelor of Science in Statistics, First Class</p>
         </div>
-      </div>
     </section>
-  </main>
 
-  <footer>
-    <p>© 2026 Emmanuel Adjei</p>
-    <p>PhD Researcher · University of California, Irvine</p>
-  </footer>
+    <section id="teaching">
+        <h2>Teaching Experience</h2>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>University of California, Irvine</h3>
+                <span>September 2022–August 2024</span>
+            </div>
+            <p><strong>Teaching Assistant and Reader, Department of Statistics</strong></p>
+            <p>Supported courses in basic statistics, probability, statistical inference, and data analysis.</p>
+        </div>
+        <div class="entry">
+            <div class="entry-heading">
+                <h3>Kwame Nkrumah University of Science and Technology</h3>
+                <span>August 2020–September 2022</span>
+            </div>
+            <p><strong>Research and Teaching Assistant, Department of Mathematics</strong></p>
+            <p>Tutored differential equations, calculus, numerical methods, real analysis, partial differential equations, and linear algebra.</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Selected Projects</h2>
+        <div class="entry">
+            <h3>Passco — WASSCE Exam Prep App</h3>
+            <p>A Flutter and Firebase mobile application for West African examination questions, LaTeX mathematics, and worked solutions.</p>
+        </div>
+        <div class="entry">
+            <h3>Mathematics Lessons on YouTube</h3>
+            <p>Lessons on partial differential equations and topics from the WAEC mathematics syllabus.</p>
+            <p><a href="https://www.youtube.com/@emmanueladjei6389" target="_blank" rel="noopener noreferrer">YouTube channel</a></p>
+        </div>
+    </section>
+
+    <section id="awards">
+        <h2>Awards and Service</h2>
+        <ul>
+            <li>U.S. Department of Education GAANN Fellowship</li>
+            <li>Department of Statistics, UC Irvine Assistantship Award</li>
+            <li>AIMS General Bursary</li>
+            <li>Reviewer, 2026 American Control Conference</li>
+            <li>Student Volunteer, 46th Southern California Control Workshop</li>
+        </ul>
+    </section>
+
+    <section id="skills">
+        <h2>Computing Skills</h2>
+        <p><strong>Programming:</strong> Python, MATLAB, Mathematica, R, and SQL</p>
+        <p><strong>Libraries:</strong> NumPy, SciPy, scikit-learn, and PyTorch</p>
+        <p><strong>Technologies:</strong> Unix shell, LaTeX, Tableau, Power BI, Flutter, and Firebase</p>
+    </section>
+
+    <footer>
+        <p>Emmanuel Adjei · University of California, Irvine</p>
+    </footer>
+</main>
+
 </body>
 </html>
